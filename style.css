@@ -7,7 +7,8 @@
 
 /* variable */
 :root {
-    --border-color: #9E9FA5;
+    --navbar-border-color: #9E9FA5;
+    --navitem-border-color: #4F709C;
 }
 
 /* layout */
@@ -20,15 +21,32 @@ nav {
     gap: 30px;
 }
 
+.nav-bar__item {
+    display: flex;
+    align-items: center;
+}
+
 /* typography */
+html {
+    font-family: 'Roboto', sans-serif;
+}
 
 /* style */
 body {
     padding: 10px;
 }
 nav {
-    padding: 20px;
+    border-top: 2px solid var(--navbar-border-color);
+    border-bottom: 1px solid var(--navbar-border-color);
 
-    border-top: 2px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    height: 60px;
+}
+
+.nav-bar__item {
+    cursor: pointer;
+    height: 100%;
+}
+.nav-bar__item--current {
+    color: var(--navitem-border-color);
+    border-bottom: 4px solid var(--navitem-border-color);
 }
