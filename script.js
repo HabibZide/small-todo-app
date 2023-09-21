@@ -1,15 +1,18 @@
 // Nav Bar functionality
 const navBarItems = document.querySelectorAll(".nav-bar__item");
+const sectionBoxs = document.querySelectorAll(".section-parts");
 
-navBarItems.forEach((item)=>{
-    // nav bar item color change when click the specific category
-    item.addEventListener("click",(e)=>{
-        if (e.target === item) {
+// nav bar item color change when click the specific category
+for (let i=0; i<navBarItems.length; i++) {
+    navBarItems[i].addEventListener("click",(e)=>{
+        if (e.target === navBarItems[i]) {
             navBarItems.forEach((item) => item.classList.remove("nav-bar__item--current"));
             e.target.classList.add("nav-bar__item--current");
+            sectionBoxs.forEach((item)=> item.classList.add("hidden"));
+            sectionBoxs[i].classList.remove("hidden");
         }
     })
-})
+}
 
 // Dialog box functionality
 const btnOpenDialog = document.querySelector(".open-dialog");
