@@ -16,15 +16,15 @@
 <body>
     <!-- nav bar -->
     <nav id="nav-bar">
-        <div class="nav-bar__item nav-bar__item--current">Alert Box</div>
-        <div class="nav-bar__item">Todo</div>
+        <div class="nav-bar__item">Alert Box</div>
+        <div class="nav-bar__item nav-bar__item--current">Todo</div>
         <div class="nav-bar__item">Form</div>
     </nav>
 
     <main>
 
         <!-- alert box -->
-        <section class="section-parts alert-box">
+        <section class="section-parts alert-box hidden">
             <button class="open-dialog">Open dialog</button>
             <div class="overlay hidden"></div>
             <div class="dialog-box hidden">
@@ -36,7 +36,17 @@
 
         <!-- to do -->
         <section class="section-parts todo-box">
+            <h3>Todo App</h3>
+            <div>
+                <input type="text">
+            </div>
+            <ul class="todolist-box">
 
+            </ul>
+            <div>
+                <input type="text">
+                <button>Add Todo</button>
+            </div>
         </section>
 
         <!-- form -->

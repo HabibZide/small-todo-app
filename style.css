@@ -7,10 +7,15 @@
 
 /* variable */
 :root {
+    /* aler box color */
     --navbar-border-color: #9E9FA5;
     --navitem-border-color: #4F709C;
     --font-color: #4F709C;
     --btn-bgc-color: #a1b7d3;
+
+    /* todo box color */
+    --todo-btn-color: #6499E9;
+    --todo-font-color: white;
 }
 
 /* layout */
@@ -18,7 +23,7 @@ body {
 
 }
 
-/* Nav bar layout */
+    /* Nav bar layout */
 nav {
     display: flex;
     gap: 30px;
@@ -35,7 +40,7 @@ main {
     align-items: center;
 }
 
-/* dialog box layout */
+    /* dialog box layout */
 .alert-box {
     display: flex;
     justify-content: center;
@@ -46,9 +51,27 @@ main {
     gap: 15px;
 }
 
+    /* todo box layout */
+.todo-box {
+    display: flex;
+    flex-direction: column;
+}
+.todo-box div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
 /* typography */
 html {
     font-family: 'Roboto', sans-serif;
+}
+
+    /* todo box typography */
+.todo-box h3 {
+    text-align: center;
+}
+.todo-box div:last-child button {
+    color: var(--todo-font-color);
 }
 
 /* style */
@@ -64,7 +87,7 @@ body {
     position: relative;
 }
 
-/* Nav bar styling */
+    /* Nav bar styling */
 nav {
     border-top: 2px solid var(--navbar-border-color);
     border-bottom: 1px solid var(--navbar-border-color);
@@ -85,7 +108,7 @@ main {
     min-height: 92%;
 }
 
-/* dialog box styling */
+    /* dialog box styling */
 .open-dialog {
     color: var(--font-color);
 
@@ -131,4 +154,37 @@ main {
     background-color: var(--btn-bgc-color);
 
     color: var(--font-color);
+}
+
+    /* todo box styling */
+.todo-box, .todo-box div:last-child {
+    gap: 10px;
+}
+
+.todo-box input[type=text] {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 7px;
+
+    padding: 10px;
+    
+    outline: none;
+}
+.todo-box input[type=text]:focus {
+    border-color: var(--todo-btn-color);
+}
+
+.todo-box ul {
+    border-bottom: 1px solid gray;
+}
+
+.todo-box div:last-child button {
+    width: 50%;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--todo-btn-color);
 }
