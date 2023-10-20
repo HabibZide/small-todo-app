@@ -17,8 +17,8 @@
     <!-- nav bar -->
     <nav id="nav-bar">
         <div class="nav-bar__item">Alert Box</div>
-        <div class="nav-bar__item nav-bar__item--current">Todo</div>
-        <div class="nav-bar__item">Form</div>
+        <div class="nav-bar__item ">Todo</div>
+        <div class="nav-bar__item nav-bar__item--current">Form</div>
     </nav>
 
     <main>
@@ -35,7 +35,7 @@
         </section>
 
         <!-- to do -->
-        <section class="section-parts todo-box">
+        <section class="section-parts todo-box hidden">
             <h3>Todo App</h3>
             <div>
                 <input type="text">
@@ -51,7 +51,24 @@
 
         <!-- form -->
         <section class="section-parts form-box">
+            <h3>Login</h3>
 
+            <div class="input-field name">
+                <label for="name">Name</label>
+                <input type="text">
+            </div>
+
+            <div class="input-field email">
+                <label for="email">Email</label>
+                <input type="email">
+            </div>
+
+            <div class="input-field password">
+                <label for="password">Password</label>
+                <input type="password">
+            </div>
+
+            <button>Login</button>
         </section>
     </main>
 </body>

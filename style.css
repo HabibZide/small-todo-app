@@ -61,6 +61,18 @@ main {
     flex-direction: column;
 }
 
+    /* form box layout */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.input-field {
+
+    display: flex;
+    flex-direction: column;
+}
+
 /* typography */
 html {
     font-family: 'Roboto', sans-serif;
@@ -72,6 +84,12 @@ html {
 }
 .todo-box div:last-child button {
     color: var(--todo-font-color);
+}
+
+    /* valiadation page typography */
+label {
+    font-size: 16px;
+    font-weight: 300;
 }
 
 /* style */
@@ -187,4 +205,9 @@ main {
     border-radius: 10px;
 
     background-color: var(--todo-btn-color);
+}
+
+    /* viladation page styling */
+.input-field {
+    
 }
