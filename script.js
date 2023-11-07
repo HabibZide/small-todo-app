@@ -48,6 +48,7 @@ const inputWriteTodo = document.querySelector(".write-todo");
 
 const taskArray = [];
 
+    //Tasks adding
 function createTaskElement(taskString){
     let task = document.createElement("li");
     let taskName = document.createElement("h4");
@@ -88,6 +89,7 @@ document.addEventListener('keydown', (e)=> {
     }
 })
 
+    //Tasks removing
 function deleteTask(taskString) {
     for (let i=0; i < taskArray.length; i++) {
         if (taskArray[i].name === taskString) {
@@ -100,4 +102,15 @@ taskList.addEventListener("click", (e)=>{
     if (e.target.parentElement.className === "delete-todo") {
         deleteTask(e.target.parentElement.parentElement.firstElementChild.innerText)
     }
+})
+
+    //Tasks seraching
+const searchInput = document.querySelector(".search-todo");
+
+searchInput.addEventListener("input",(e)=>{
+    for (i of taskArray) {
+        if (searchInput.value !== i.name.slice(0,searchInput.value.length)) i.element.style.display = "none";
+        else i.element.style.display = "flex";
+    }
+    console.log(searchInput.value);
 })
