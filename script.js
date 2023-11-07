@@ -38,3 +38,79 @@ btnCloseDialog.addEventListener("click",(e)=>{
 overLay.addEventListener("click",(e)=>{
     closeOrOpenDialogBox();
 })
+
+// Todo functionalities
+
+const taskList = document.querySelector(".todolist-box");
+
+const btnAddTodo = document.querySelector(".add-todo");
+const inputWriteTodo = document.querySelector(".write-todo");
+
+const taskArray = [];
+
+    //Tasks adding
+function createTaskElement(taskString){
+    let task = document.createElement("li");
+    let taskName = document.createElement("h4");
+    taskName.innerText = taskString;
+
+    let icon = document.createElement("span");
+    icon.innerText = "delete"
+    icon.classList.add("material-symbols-outlined")
+
+    let deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-todo");
+
+    deleteBtn.appendChild(icon);
+
+    task.appendChild(taskName);
+    task.appendChild(deleteBtn);
+
+    taskArray.push({
+        name: taskString,
+        element: task
+    })
+    
+    return task;
+}
+
+function appendTask() {
+   taskList.appendChild(createTaskElement(inputWriteTodo.value));
+   inputWriteTodo.value = "";
+}
+
+btnAddTodo.addEventListener('click', (e)=>{
+    if(inputWriteTodo.value) appendTask();
+})
+document.addEventListener('keydown', (e)=> {
+
+    if (e.key === "Enter" && inputWriteTodo.value) {
+        appendTask();
+    }
+})
+
+    //Tasks removing
+function deleteTask(taskString) {
+    for (let i=0; i < taskArray.length; i++) {
+        if (taskArray[i].name === taskString) {
+            taskArray[i].element.remove();
+            taskArray.splice(i,1);
+        }
+    }
+}
+taskList.addEventListener("click", (e)=>{
+    if (e.target.parentElement.className === "delete-todo") {
+        deleteTask(e.target.parentElement.parentElement.firstElementChild.innerText)
+    }
+})
+
+    //Tasks seraching
+const searchInput = document.querySelector(".search-todo");
+
+searchInput.addEventListener("input",(e)=>{
+    for (i of taskArray) {
+        if (searchInput.value !== i.name.slice(0,searchInput.value.length)) i.element.style.display = "none";
+        else i.element.style.display = "flex";
+    }
+    console.log(searchInput.value);
+})

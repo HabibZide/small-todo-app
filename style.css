@@ -71,6 +71,10 @@ main {
 
     display: flex;
     flex-direction: column;
+.todolist-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 /* typography */
@@ -89,6 +93,8 @@ html {
     /* valiadation page typography */
 label {
     font-size: 16px;
+    /* todo box typography */
+.todolist-box h4 {
     font-weight: 300;
 }
 
@@ -194,6 +200,17 @@ main {
 
 .todo-box ul {
     border-bottom: 1px solid gray;
+    list-style-type: none;
+}
+.todo-box ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delete-todo {
+    height: 26px;
+
+    background-color: var(--btn-bgc-color);
 }
 
 .todo-box div:last-child button {
@@ -207,7 +224,10 @@ main {
     background-color: var(--todo-btn-color);
 }
 
-    /* viladation page styling */
-.input-field {
-    
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
